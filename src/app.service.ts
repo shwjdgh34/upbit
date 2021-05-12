@@ -30,6 +30,7 @@ export class AppService {
   @Cron('* * */4 * * *')
   updateCandleData() {
     this.coins.forEach(async c => {
+      c.initMessageFlag();
       c.updateLowestPrice(3)
     });
   }
