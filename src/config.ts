@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 import * as path from 'path';
 
-dotenv.config({ path: path.join(__dirname, '../src/.env') });
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 export const BIG_NUMBER = 987654321;
 export const coinList: string[] = ['STRAX', 'EMC2', 'STEEM', 'MED', 'CBK', 'BCH'];
