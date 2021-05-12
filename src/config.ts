@@ -1,8 +1,10 @@
-import * as dotenv from 'dotenv'
+import * as dotenv from 'dotenv';
+import * as path from 'path';
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '../src/.env') });
 
-export const coinList: string[] = ['STRAX', 'EMC2', 'DOT', 'BCH'];
+export const BIG_NUMBER = 987654321;
+export const coinList: string[] = ['STRAX', 'EMC2', 'STEEM'];
 export const statusStandard = 1.2;
 export const emailConfigs = {
   senderId: process.env.SENDER_ID,

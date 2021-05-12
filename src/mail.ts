@@ -13,18 +13,18 @@ export class Mail {
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: emailConfigs.senderId, // generated ethereal user
-        pass: emailConfigs.senderPw, // generated ethereal password
+        user: emailConfigs.senderId,
+        pass: emailConfigs.senderPw,
       },
     });
 
     // send mail with defined transport object
     transporter.sendMail({
-      from: `🔥떡상 가즈아🔥" <${emailConfigs.senderId}>`, // sender address
+      from: `🔥떡상 가즈아🔥 <${emailConfigs.senderId}>`, // sender address
       to: emailConfigs.receiverId, // list of receivers
       subject: `Rising ${name}`, // Subject line
       // text: "Hello world?", // plain text body
-      html: `<b>현재가격: ${currentPrice}</b><br><b>최근 최저가격: ${lowestPrice}</b>`, // html body
+      html: `<b>상승률: ${Math.floor((currentPrice / lowestPrice - 1) * 100)}%</b><br><b>현재가격: ${currentPrice}</b><br><b>최근 최저가격: ${lowestPrice}</b>`, // html body
     });
 
     this.logger.log("Sent Mail")
